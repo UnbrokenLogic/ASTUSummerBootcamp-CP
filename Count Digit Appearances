@@ -1,10 +1,11 @@
 class Solution:
     def countDigitOccurrences(self, nums: list[int], digit: int) -> int:
-
+        '''
         total_count = 0
-        digit_str = str(digit)
 
         for num in nums:
-            total_count += str(num).count(digit_str)
+            total_count += str(num).count(str(digit))
 
         return total_count
+        '''
+        return ( "".join(map(str, nums)).count(str(digit)) )
