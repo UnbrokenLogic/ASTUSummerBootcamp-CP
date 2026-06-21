@@ -1,0 +1,20 @@
+class Solution:
+    def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
+
+        for inner in image:
+            inner.reverse()
+
+        for inner in image:
+            left = 0
+            right = len(inner) - 1
+
+            while left <= right:
+                inner[left] = 1 - inner[left]
+
+                if left != right:
+                    inner[right] = 1 - inner[right]
+
+                left += 1
+                right -= 1
+
+        return image
